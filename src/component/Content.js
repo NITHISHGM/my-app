@@ -10,8 +10,8 @@ const Content = ({ user, getUser, loading }) => {
   //   } = user[0];
 
   // getting user data from localStorage
-  const userDataString = localStorage.getItem("user");
-  const userData = JSON.parse(userDataString);
+  // const userDataString = localStorage.getItem("user");
+  // const userData = JSON.parse(userDataString);
   // Destructure user data
   const {
     email,
@@ -25,7 +25,7 @@ const Content = ({ user, getUser, loading }) => {
       coordinates: { latitude, longitude },
     },
     picture: { large },
-  } = userData[0];
+  } = user[0];
 
   return (
     <>
