@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import Content from "./component/Content";
 
-function App() {
+const App = () => {
+  const [user, setUser] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const getUser = async () => {
+    setLoading(true);
+    try {
+      const response = await axios.get("https://randomuser.me/api");
+      setUser(response.data.results);
+      localStorage.setItem("user", JSON.stringify(response.data.results));
+      setLoading(false);
+    } catch (error) {
+      console.error("Error", error);
+    }
+  };
+
+  useEffect(() => {
+    getUser();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="content">
+      <Content user={user} getUser={getUser} loading={loading} />
     </div>
   );
-}
+};
 
 export default App;

@@ -1,13 +1,69 @@
-body {
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
+.content {
+  min-height: 80vh;
+  background: #faf8f8;
+  position: absolute;
+  width: 100%;
+  top: 20%;
+}
+button.btn {
+  background: #2196f3;
+  border: 1px solid #2196f3;
+  padding: 5px 12px;
+  border-radius: 6px;
+  color: white;
+}
+button.btn:hover {
+  background: #058cf7;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.text-center {
+  text-align: center;
+}
+.float-right {
+  float: right;
+}
+button.btn:disabled {
+  background: grey;
+  border: 1px solid grey;
+  cursor: not-allowed;
+}
+.user-card {
+  background: gainsboro;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  margin-top: 10px;
+}
+.head-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+.user-address > div {
+  font-size: 15px;
+  font-weight: 500;
+  color: #424040;
+}
+.loader {
+  top: 40%;
+  left: 5%;
+  text-align: center;
+  position: relative;
+  font-size: 27px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  opacity: 0.5;
+}
+.label {
+  float: right;
+  color: black;
+  font-weight: 700;
+  padding-right: 12px;
+}
+.name {
+  font-size: 20px !important;
+  color: black !important;
 }
